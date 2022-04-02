@@ -26,7 +26,7 @@
           <el-button type="primary" :disabled="isBtnDisabled" @click="addDialogVisible = true">添加参数
           </el-button>
           <!-- 动态表格显示 -->
-          <el-table :data="manyTableDate" border script>
+          <el-table :data="manyTableData" border script>
             <!-- 展开行 -->
             <el-table-column type="expand">
               <template slot-scope="scope">
@@ -65,7 +65,7 @@
           </el-button>
 
           <!-- 静态表格显示 -->
-          <el-table :data="onlyTableDate" border script>
+          <el-table :data="onlyTableData" border script>
             <!-- 展开行 -->
             <el-table-column type="expand">
               <template slot-scope="scope">
@@ -153,9 +153,9 @@ export default {
       // 被激活的页签的名称
       activeName: 'many',
       // 动态数据
-      manyTableDate: [],
+      manyTableData: [],
       // 静态数据
-      onlyTableDate: [],
+      onlyTableData: [],
       // 添加对话框的显示与隐藏
       addDialogVisible: false,
       // 添加参数表单
@@ -212,8 +212,8 @@ export default {
     async getParamsDate () {
       if (this.selectedKeys.length !== 3) {
         this.selectedKeys = []
-        this.manyTableDate = []
-        this.onlyTableDate = []
+        this.manyTableData = []
+        this.onlyTableData = []
         return
       }
       // 已经选中三级标签
@@ -232,9 +232,9 @@ export default {
       console.log(res.data)
       // 判断是静态数据还是动态
       if (this.activeName === 'many') {
-        this.manyTableDate = res.data
+        this.manyTableData = res.data
       } else {
-        this.onlyTableDate = res.data
+        this.onlyTableData = res.data
       }
     },
     // 监听对话框关闭事件

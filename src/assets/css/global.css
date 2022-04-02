@@ -43,3 +43,15 @@ html,body,#app {
   display: table-cell;
   vertical-align: middle;
 }
+
+.el-steps{ 
+  margin: 15px 0;
+}
+
+.el-step__title {
+  font-size: 13px;
+}
+
+.ql-container.ql-snow {
+  height: 300px;
+}
