@@ -55,3 +55,7 @@ html,body,#app {
 .ql-container.ql-snow {
   height: 300px;
 }
+
+.el-pagination {
+  margin-top: 15px;
+}
